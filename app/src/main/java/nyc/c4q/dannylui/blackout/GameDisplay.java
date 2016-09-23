@@ -1,9 +1,7 @@
 package nyc.c4q.dannylui.blackout;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +45,12 @@ public class GameDisplay extends AppCompatActivity {
         Blackout.gameLevel = 0;
         Blackout.convergingPath = false;
         Blackout.imageResId = R.drawable.under_construction_bg;
+
+        Blackout.monsterHealth = 100;
+        Blackout.monsterMaxFatigue = 3;
+        Blackout.playerChanceToHit = .5;
+        Blackout.playerChanceToDodge = .5;
+        Blackout.playerDamage = 34;
     }
 
     public void choiceOne(View view){
