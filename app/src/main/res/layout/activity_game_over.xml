@@ -21,7 +21,7 @@
         android:layout_below="@id/gameover_image_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="SOMETHING WENT WRONG HERE"
         android:textColor="@color/white"
         android:layout_marginTop="10dp"

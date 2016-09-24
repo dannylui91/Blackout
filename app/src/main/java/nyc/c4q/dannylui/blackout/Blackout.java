@@ -29,14 +29,16 @@ public class Blackout {
                 dialogue = (Dialogue.getDeadLog(0));
             }
             if (gameLevel == 1 && input == 2) {
+                imageResId = R.drawable.waking_up_bg;
                 dialogue = (Dialogue.getLivingLog(1)); //1. Open the door, 2. Try to unboard the windows
             }
             if (gameLevel == 2 && input == 1) { //converging
                 convergingPath = true;
+                imageResId = R.drawable.opening_door_bg;
                 dialogue = (Dialogue.getLivingLog(4)); //1. Go back and grab the candle, 2. Continue forward
             }
             if (gameLevel == 2 && input == 2) {
-
+                imageResId = R.drawable.boarded_window_bg;
                 dialogue = (Dialogue.getLivingLog(2)); //1. Investigate the noise, 2. Wait and hide behind your bed
             }
 
@@ -47,12 +49,14 @@ public class Blackout {
             }
 
             if (gameLevel == 3 && input == 2) {
+                imageResId = R.drawable.hiding_behind_bed_bg;
                 dialogue = (Dialogue.getLivingLog(3)); //1. Open your door, 2. Stay in your room
             }
 
             if (gameLevel == 4 && input == 1) {
                 gameLevel = 2;
                 convergingPath = true;
+                imageResId = R.drawable.opening_door_bg;
                 dialogue = (Dialogue.getLivingLog(4)); //1. Go back and grab the candle, 2. Continue forward
             }
             if (gameLevel == 4 && input == 2) {
@@ -64,6 +68,7 @@ public class Blackout {
 
         } else {
             if (gameLevel == 3 && input == 1) {
+                imageResId = R.drawable.hallway_bg;
                 dialogue = (Dialogue.getLivingLog(5)); //1. Proceed left of the hallway, 2. Proceed right of the hallway
             }
 
@@ -79,13 +84,16 @@ public class Blackout {
                 return (Dialogue.getDeadLog(3));
             }
             if (gameLevel == 4 && input == 2){
+                imageResId = R.drawable.baseball_bat_bg;
                 dialogue = (Dialogue.getLivingLog(6)); //1. Take the baseball bat, 2. Leave the baseball bat
             }
 
             if (gameLevel == 5 && input == 1) {
+                imageResId = R.drawable.monster_bg;
                 dialogue = (Dialogue.getLivingLog(7)); //1. Fight it, 2. Run
             }
             if (gameLevel == 5 && input == 2) {
+                imageResId = R.drawable.monster_bg;
                 dialogue = (Dialogue.getLivingLog(8)); //1. Fight it, 2. Run
             }
 
@@ -121,6 +129,7 @@ public class Blackout {
 
                 }
                 else {
+                    imageResId = R.drawable.escaped_bg;
                     result += Dialogue.getCombatLog(2) + " ";
                     break;
                 }
@@ -142,6 +151,7 @@ public class Blackout {
         }
 
         if (monsterCurrentFatigue == monsterMaxFatigue) {
+            imageResId = R.drawable.escaped_bg;
             result += Dialogue.getCombatLog(6) + " ";
         }
 

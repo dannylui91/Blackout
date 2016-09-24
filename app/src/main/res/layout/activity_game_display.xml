@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:textColor="@color/white"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="OOPS SOMETHING WENT WRONG HERE"
         android:layout_marginTop="10dp"
         android:background="@drawable/my_textview_bg"
