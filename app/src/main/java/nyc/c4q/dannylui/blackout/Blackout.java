@@ -129,6 +129,7 @@ public class Blackout {
 
                 }
                 else {
+                    gameOver = true;
                     imageResId = R.drawable.escaped_bg;
                     result += Dialogue.getCombatLog(2) + " ";
                     break;
@@ -151,6 +152,7 @@ public class Blackout {
         }
 
         if (monsterCurrentFatigue == monsterMaxFatigue) {
+            gameOver = true;
             imageResId = R.drawable.escaped_bg;
             result += Dialogue.getCombatLog(6) + " ";
         }

@@ -15,13 +15,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void menuChoiceOne(View view) {
+
         Intent intent = new Intent(this, GameDisplay.class);
         //Button button1 = (Button) findViewById(R.id.menu_button_one);
         String message = Dialogue.getLivingLog(0);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-
-
+        //this.finish();
     }
 
     public void menuChoiceTwo(View view) {
