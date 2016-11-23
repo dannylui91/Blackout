@@ -5,18 +5,18 @@ import java.util.Random;
 /**
  * Created by dannylui on 9/21/16.
  */
-public class Blackout {
+public class GameLogic {
+    public static int imageResId = R.drawable.under_construction_bg;
+
     public static int gameLevel = 0;
     public static boolean convergingPath = false;
     public static boolean gameOver = false;
-    public static int imageResId = R.drawable.under_construction_bg;
 
-    //game related
     public static int monsterHealth = 100;
     public static int monsterMaxFatigue = 3;
+    public static int playerDamage = 34;
     public static double playerChanceToHit = .5;
     public static double playerChanceToDodge = .5;
-    public static int playerDamage = 34;
     public static boolean baseballBat = false;
 
     public static String getDialogue(int input) {
@@ -100,7 +100,7 @@ public class Blackout {
             if (gameLevel == 6 && input == 1) {
                 baseballBat = true;
                 updatePlayerStats(0.00, 0.25, 16); //chanceToDodge,chanceToHit,damage increased by...
-                dialogue = fight();
+                dialogue = monsterFight();
             }
             if (gameLevel == 6 && input == 2) {
                 gameOver = true;
@@ -112,8 +112,7 @@ public class Blackout {
         return dialogue;
     }
 
-
-    public static String fight() {
+    public static String monsterFight() {
         String result = "";
         result += Dialogue.getCombatLog(0) + " ";
 
@@ -164,5 +163,18 @@ public class Blackout {
         playerChanceToDodge += dodgeChance;
         playerChanceToHit += hitChance;
         playerDamage += damage;
+    }
+
+    public static void resetGame() {
+        gameOver = false;
+        gameLevel = 0;
+        convergingPath = false;
+        imageResId = R.drawable.under_construction_bg;
+
+        monsterHealth = 100;
+        monsterMaxFatigue = 3;
+        playerChanceToHit = .5;
+        playerChanceToDodge = .5;
+        playerDamage = 34;
     }
 }
